@@ -1,7 +1,7 @@
-#!/bin/sh 
+#!/bin/sh
 
-set -e 
-set -x 
+set -e
+set -x
 
 if [ -z "$INPUT_SOURCE_FOLDER" ]
 then
@@ -15,21 +15,12 @@ then
   return -1
 fi
 
-if [ -z "$INPUT_COMMIT_MESSAGE_TITLE" ]
-then
-  INPUT_COMMIT_MESSAGE_TITLE="Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-else
-    INPUT_COMMIT_MESSAGE_TITLE="$INPUT_COMMIT_MESSAGE_TITLE: Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-fi
-
-
 if [ -z "$INPUT_PULL_REQUEST_REVIEWERS" ]
 then
   PULL_REQUEST_REVIEWERS=$INPUT_PULL_REQUEST_REVIEWERS
 else
   PULL_REQUEST_REVIEWERS='-r '$INPUT_PULL_REQUEST_REVIEWERS
 fi
-
 
 CLONE_DIR=$(mktemp -d)
 
@@ -63,5 +54,3 @@ then
 else
   echo "No changes detected"
 fi
-
-echo Hello
