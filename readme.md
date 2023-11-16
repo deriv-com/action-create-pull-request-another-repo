@@ -15,7 +15,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Create pull request
-      uses: paygoc6/action-pull-request-another-repo@v1.0.1
+      uses: mohsen-deriv/action-create-pull-request-another-repo@1.0.0
+
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
