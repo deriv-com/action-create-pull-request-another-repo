@@ -24,7 +24,7 @@ fi
 
 if [ -z "$INPUT_COMMIT_MESSAGE_TITLE" ]
 then
-  INPUT_COMMIT_MESSAGE="chore: Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
+  INPUT_COMMIT_MESSAGE="Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
 else
     INPUT_COMMIT_MESSAGE="$INPUT_COMMIT_MESSAGE_TITLE: Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
 fi
